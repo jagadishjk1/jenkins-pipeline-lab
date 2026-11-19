@@ -14,6 +14,7 @@ pipeline {
         stage ('Test'){
             steps{
                 echo "Testing the application in ${APP_ENV}"
+                echo "testing config" > config/test-settings.yaml
                 sh '''
                 echo "Setting up test environment..."
                 echo "Installing dependencies..."
