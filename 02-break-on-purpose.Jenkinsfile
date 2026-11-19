@@ -14,13 +14,14 @@ pipeline {
         stage ('Test'){
             steps{
                 echo "Testing the application in ${APP_ENV}"
-                echo "testing config" > config/test-settings.yaml
                 sh '''
                 echo "Setting up test environment..."
                 echo "Installing dependencies..."
                 echo "Dependency 1 installed"
                 echo "Dependency 2 installed"
                 echo "Loading test config..."
+                mkdir -p config
+                echo "testing config" > config/test-settings.yaml
                 cat config/test-settings.yaml
                 echo "Running tests..."
                 echo "All tests passed"
