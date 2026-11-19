@@ -14,6 +14,7 @@ pipeline {
         stage ('Test'){
             steps{
                 echo "Testing the application in ${APP_ENV}"
+                sh 'exit 1'
             }
         }
         
