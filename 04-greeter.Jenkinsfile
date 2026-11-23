@@ -59,8 +59,8 @@ pipeline {
         stage('publish') {
             when {
                 anyOf {
-                    expression { params.ENVIRONMENT == 'qa'}
-                    expression { params.ENVIRONMENT == 'prod'}
+                    expression { params.TARGET_ENV == 'qa'}
+                    expression { params.TARGET_ENV == 'prod'}
                     }
                 }
            environment {
@@ -68,7 +68,7 @@ pipeline {
                 }
 
             steps{
-                sh "echo Publishing greeter 0.1.0 as $REGISTRY_CREDS.USER"
+                sh "echo Publishing greeter 0.1.0 as $REGISTRY_CREDS_USR"
                 }
             }
 
