@@ -36,7 +36,7 @@ pipeline {
             steps  {
                 
                 sh ''' 
-                    ll
+                    ls -l
                     python -m venv .venv
                     . .venv/bin/activate
                     pip install --upgrade pip
