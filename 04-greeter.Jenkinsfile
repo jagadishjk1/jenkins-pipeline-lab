@@ -41,7 +41,7 @@ pipeline {
                     . .venv/bin/activate
                     pip install --upgrade pip
                     pip install -r app/requirements-dev.txt
-                    python -m pytest tests -v --junitxml=test-results.xml
+                    python -m pytest app/tests -v --junitxml=test-results.xml
                     '''
             }
             post {
