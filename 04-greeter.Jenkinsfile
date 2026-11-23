@@ -22,7 +22,6 @@ pipeline {
                 sh "echo Git commit: $GIT_COMMIT"
             }
         }
-
         stage('test') {
             when {
                 beforeAgent true
