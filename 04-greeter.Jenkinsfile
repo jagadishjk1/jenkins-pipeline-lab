@@ -22,6 +22,7 @@ pipeline {
                 sh "echo Git commit: $GIT_COMMIT"
             }
         }
+
         stage('test') {
             when {
                 beforeAgent true
@@ -47,6 +48,8 @@ pipeline {
                     junit 'backend/test-results.xml'
                 }
             }
+
+        }
 
         stage('publish') {
             when {
