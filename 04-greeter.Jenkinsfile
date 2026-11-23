@@ -53,7 +53,7 @@ pipeline {
 
         stage('publish') {
             when {
-                anyof {
+                anyOf {
                     expression { params.ENVIRONMENT == 'qa'}
                     expression { params.ENVIRONMENT == 'prod'}
                     }
@@ -74,12 +74,9 @@ pipeline {
             }
 
         }          
-   }
 
    post {
             success { echo 'Pipeline finished successfully!' }
             failure { echo 'Pipeline failed. Check the console output.' }
    }
-
-
 }
