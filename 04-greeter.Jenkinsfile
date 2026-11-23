@@ -34,7 +34,7 @@ pipeline {
             }
 
             environment {
-            APP_NAME = "${params.TARGET_ENV}"
+            APP_ENV = "${params.TARGET_ENV}"
             }
 
             steps  {
