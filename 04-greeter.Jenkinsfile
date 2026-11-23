@@ -22,8 +22,8 @@ pipeline {
                 sh "echo Git commit: $GIT_COMMIT"
             }
         }
-        
-        stage('test'){
+
+        stage('test') {
             when {
                 beforeAgent true
                 expression {params.RUN_TESTS}
@@ -48,6 +48,7 @@ pipeline {
                     junit 'backend/test-results.xml'
                 }
             }
+
         stage('publish') {
             when {
                 anyof {
