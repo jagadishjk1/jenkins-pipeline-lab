@@ -2,7 +2,7 @@ pipeline {
    agent any
 
    environment {
-        APP_NAME = greeter
+        APP_NAME = 'greeter'
    }
 
    parameters {
@@ -22,6 +22,7 @@ pipeline {
                 sh "echo Git commit: $GIT_COMMIT"
             }
         }
+        
         stage('test'){
             when {
                 beforeAgent true
