@@ -33,6 +33,10 @@ pipeline {
                 docker { image 'python:3.11-slim' }
             }
 
+            environment {
+            APP_NAME = "${params.TARGET_ENV}"
+            }
+
             steps  {
                 
                 sh ''' 
